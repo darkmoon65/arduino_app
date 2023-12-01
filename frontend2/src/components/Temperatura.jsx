@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
+import Navbar from './Navbar';
 
-const Navbar = () => {
+const Temperatura = () => {
   const [temperatura, setTemperatura] = useState(25);
 
   const fondoEstilos = {
@@ -41,6 +42,8 @@ const Navbar = () => {
   };
 
   return (
+    <div>
+<Navbar></Navbar>
     <div style={fondoEstilos}>
       <div>Controle la temperatura</div>
 
@@ -57,7 +60,9 @@ const Navbar = () => {
         <h1>{temperatura} ºC</h1>
       </div>
     </div>
+    </div>
+    
   );
 };
 
-export default Navbar;
+export default Temperatura;
