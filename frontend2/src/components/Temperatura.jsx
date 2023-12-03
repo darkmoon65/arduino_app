@@ -49,7 +49,7 @@ const Temperatura = () => {
         <FontAwesomeIcon icon={faChevronUp} style={iconoEstilos} onClick={handleIncrementarTemperatura} />
         <div>
           <span style={{ marginLeft: "20px" }}>{temperatura}ºC</span>
-          <FontAwesomeIcon icon={faChevronCircleRight} style={{ marginLeft: "10px" , color: "#008000", cursor : "pointer"}} />
+          <FontAwesomeIcon icon={faChevronCircleRight} style={{ marginLeft: "10px" , color: "#FFE15A", cursor : "pointer"}} />
         </div>
         <FontAwesomeIcon icon={faChevronDown} style={iconoEstilos} onClick={handleDecrementarTemperatura} />
       </div>
