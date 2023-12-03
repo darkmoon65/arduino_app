@@ -1,7 +1,5 @@
-import React from 'react'; 
-import Navbar from './Navbar';
-import Temperatura from './Temperatura';
-import Switches from './Switches';
+import React from 'react';  
+import Menu from './Menu';
 
 
 
@@ -9,10 +7,8 @@ const Home = () => {
   
 
   return (
-    <div>
-      <Navbar></Navbar>
-      <Temperatura></Temperatura>
-      <Switches></Switches>
+    <div> 
+      <Menu></Menu>
     </div>
   );
 };

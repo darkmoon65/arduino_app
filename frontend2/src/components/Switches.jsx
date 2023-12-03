@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faToggleOn, faToggleOff } from '@fortawesome/free-solid-svg-icons';
-import Navbar from './Navbar';
 import Lottie from 'lottie-react';
 import foco from './../assets/foco.json';
 import green from './../assets/green.json';
@@ -10,16 +9,19 @@ import yellow from './../assets/yellow.json';
 import sound from './../assets/sound.json';
 
 const Switches = () => {
-  const [iconStates, setIconStates] = useState(Array(5).fill(false));
+  const [iconStates, setIconStates] = useState([false,false,false,false,false]);
 
   const handleToggleClick = (index) => {
     const newIconStates = [...iconStates];
+    console.log(newIconStates)
     newIconStates[index] = !newIconStates[index];
+    console.log(newIconStates)
     setIconStates(newIconStates);
+    console.log(iconStates)
   };
 
   const fondoEstilos = {
-    backgroundColor: "#000",
+    background: "linear-gradient(to bottom, #800080 10%, #000 70%)",
     color: "#fff",
     padding: "20px",
     textAlign: "center",
@@ -45,14 +47,15 @@ const Switches = () => {
 
   return (
     <div>
-      <Navbar />
       <div style={fondoEstilos}>
-        {iconStates.map((isSwitchOn, index) => (
+        {iconStates?.map((isSwitchOn, index) => {
+          console.log(index, isSwitchOn)
+          return (
           <div key={index} style={switchContainerEstilos}>
             <Lottie
               animationData={index === 0 ? foco : index === 1 ? green : index === 2 ? red : index === 3 ? yellow : sound}
-              loop={!isSwitchOn}  
-              autoplay={true}
+              //loop={!isSwitchOn}  
+              autoplay={isSwitchOn}
               style={lottiesEstilos}
             />
             <FontAwesomeIcon
@@ -68,7 +71,9 @@ const Switches = () => {
               onClick={() => handleToggleClick(index)}
             />
           </div>
-        ))}
+        )
+      }
+        )}
       </div>
     </div>
   );
