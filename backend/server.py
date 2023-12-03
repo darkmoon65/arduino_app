@@ -1,9 +1,13 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
+
 import serial 
 import time 
 import threading
 
 app = Flask(__name__)
+cors = CORS(app)
+
 last_temp = ''
 run_thread = True
 stop_event = threading.Event()
@@ -11,6 +15,7 @@ stop_event = threading.Event()
 arduino = serial.Serial(port='/dev/ttyACM0', baudrate=115200) 
 
 @app.route('/control_manual', methods = ['POST'])
+@cross_origin()
 def control_manual():
     print(request.json)
     data = request.json
@@ -23,11 +28,13 @@ def control_manual():
     return jsonify({'status': True})
 
 @app.route('/temperatura', methods = ['GET'])
+@cross_origin()
 def getTemperatura(): 
     global last_temp
     return jsonify( {'status': True, 'data': last_temp})
 
 @app.route('/prender_automatico', methods = ['POST'])
+@cross_origin()
 def prender_automatico():
     start_thread()
     return jsonify({'status': True})
@@ -48,7 +55,7 @@ def stop_thread():
 def main_check_temperature(con): 
     global last_temp 
     global run_thread
-    
+
     # while not stop_event.is_set():
     while run_thread:
         try:
