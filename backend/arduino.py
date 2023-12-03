@@ -9,6 +9,6 @@ def write_read(x):
 	   data = arduino.readline() 
 	   return data 
 while True: 
-	   #num = input("Enter a number: ") # Taking input from user 
-	   value = write_read('11') 
-	   print(value) # printing the value 
+	   letra = input("Ingresa Letra: ")
+	   value = write_read(letra) 
+	   print(value)

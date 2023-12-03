@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Temperatura = () => {
   const [temperatura, setTemperatura] = useState(25);
+  const [temperaturaActual, setTemperaturaActual] = useState('none');
 
   const fondoEstilos = {
     background: "linear-gradient(to bottom, #800080 10%, #000 70%)",
@@ -40,6 +41,23 @@ const Temperatura = () => {
     }
   };
 
+  useEffect( () => {
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:8002/temperatura')
+        const result = await response.json();
+        setTemperaturaActual(result.data);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    };
+    fetchData();
+    const intervalId = setInterval(fetchData, 1000);
+    
+    return () => clearInterval(intervalId);
+  },[]);
+
   return (
     <div>
     <div style={fondoEstilos}>
@@ -55,7 +73,7 @@ const Temperatura = () => {
       </div>
       <div>
         <span> Temperatura Actual</span>
-        <h1>{temperatura} ºC</h1>
+        <h1>{temperaturaActual} ºC</h1>
       </div>
     </div>
     </div>
