@@ -33,8 +33,8 @@ const Navbar = () => {
 
   const menuDesplegableEstilos = {
     position: 'absolute',
-    top: '70px',
-    left: '20px',
+    top: '15px',
+    left: '50px',
     backgroundColor: '#333',
     color: '#fff',
     padding: '10px',
@@ -57,6 +57,9 @@ const Navbar = () => {
       <span style={{ flex: 1 }}>{seccionActual} </span>
 
       <div style={menuDesplegableEstilos}> 
+      <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <p onClick={() => handleClickOpcion('HOME')}>HOME</p>
+        </Link>
         <Link to="/juegos" style={{ textDecoration: 'none', color: 'inherit' }}>
           <p onClick={() => handleClickOpcion('JUEGO')}>JUEGO</p>
         </Link>
