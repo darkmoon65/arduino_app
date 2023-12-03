@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown, faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
-import Navbar from './Navbar';
 
 const Temperatura = () => {
   const [temperatura, setTemperatura] = useState(25);
 
   const fondoEstilos = {
-    backgroundColor: "#000",
+    background: "linear-gradient(to bottom, #800080 10%, #000 70%)",
     color: "#fff",
     padding: "20px",
     textAlign: "center",
@@ -43,7 +42,6 @@ const Temperatura = () => {
 
   return (
     <div>
-<Navbar></Navbar>
     <div style={fondoEstilos}>
       <div>Controle la temperatura</div>
 
@@ -51,7 +49,7 @@ const Temperatura = () => {
         <FontAwesomeIcon icon={faChevronUp} style={iconoEstilos} onClick={handleIncrementarTemperatura} />
         <div>
           <span style={{ marginLeft: "20px" }}>{temperatura}ºC</span>
-          <FontAwesomeIcon icon={faChevronCircleRight} style={{ marginLeft: "10px" }} />
+          <FontAwesomeIcon icon={faChevronCircleRight} style={{ marginLeft: "10px" , color: "#008000", cursor : "pointer"}} />
         </div>
         <FontAwesomeIcon icon={faChevronDown} style={iconoEstilos} onClick={handleDecrementarTemperatura} />
       </div>
