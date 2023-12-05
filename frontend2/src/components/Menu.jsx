@@ -17,18 +17,24 @@ const fondoEstilos = {
 const contenidoEstilos = {
   display: "flex",
   alignItems: "center",
-  justifyContent: "center",
-  padding:"20px",
+  justifyContent: " ",
+  padding:"15px",
 };
 
 const columnaEstilos = {
+  paddingTop:"60px",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  fontSize:"20px",
+  paddingLeft:"10px",
+  textDecoration:"none",
 };
 
 const imagenEstilos = {
   marginRight: "10px",
+  width:"80px",
+  height:"auto"
 };
 
 const titulo = {

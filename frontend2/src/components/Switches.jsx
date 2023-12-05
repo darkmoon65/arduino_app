@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faToggleOn, faToggleOff } from '@fortawesome/free-solid-svg-icons';
 import Lottie from 'lottie-react';
@@ -21,6 +21,7 @@ const Switches = () => {
   };
 
   const fondoEstilos = {
+    paddingTop: "80px",
     background: "linear-gradient(to bottom, #800080 10%, #000 70%)",
     color: "#fff",
     padding: "20px",
@@ -39,7 +40,6 @@ const Switches = () => {
   };
 
   const lottiesEstilos = {
-    background: "#000",
     height: "auto",
     width: "100px",
     marginRight: "10px",  

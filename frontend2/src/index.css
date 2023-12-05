@@ -11,3 +11,88 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.tres-en-linea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #800080 10%, #000 70%);
+    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 81vh;
+}
+
+.tablero {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 5px;
+  background: #000;
+}
+
+.celda {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid #333;
+  font-size: 2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.celda.ocupada {
+  background-color: #eee;
+}
+
+.celda.ganadora {
+  background-color: #FFE15A;
+  text-align: center;
+}
+
+.mensaje-ganador {
+  font-weight:bold;
+  font-size:2em;
+  color: #FFE15A;  
+
+}
+
+.mensaje-empate {
+  color: #FFE15A;  
+  font-weight:bold;
+  font-size:2em;
+}
+
+.titulo {
+  color: #fff;  
+  font-weight:bold;
+  padding: 0px;
+  font-size:3em;
+
+}
+
+.mensaje-turno {
+  color: #fff;  
+  font-size:2em;
+}
+
+.boton-reiniciar {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 2em;
+  cursor: pointer;
+  background-color: #ab03ab;  
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.boton-reiniciar:hover {
+  background-color: #FFE15A; 
+  color:#000;
+  font-size: 2em;
+
+}
