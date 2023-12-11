@@ -9,19 +9,21 @@ const Temperatura = () => {
   const fondoEstilos = {
     background: "linear-gradient(to bottom, #800080 10%, #000 70%)",
     color: "#fff",
-    padding: "20px",
-    textAlign: "center",
+    padding: "60px",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    height:"100vh"
+    height:"100vh",
+    fontSize:"20px",
+    fontWeight:"",
+    paddinLeft:"-10px"
   };
 
   const temperaturaEstilos = {
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-    marginTop: "10px",
+    marginTop: "20px",
+    fontSize:"70px",
   };
 
   const iconoEstilos = {
@@ -61,7 +63,7 @@ const Temperatura = () => {
   return (
     <div>
     <div style={fondoEstilos}>
-      <div>Controle la temperatura</div>
+      <div>Controla la temperatura:</div>
 
       <div style={temperaturaEstilos}>
         <FontAwesomeIcon icon={faChevronUp} style={iconoEstilos} onClick={handleIncrementarTemperatura} />
@@ -73,7 +75,7 @@ const Temperatura = () => {
       </div>
       <div>
         <span> Temperatura Actual</span>
-        <h1>{temperaturaActual} ºC</h1>
+        <h1 style={{fontFamily: 'VT323, monospace', fontSize:"60px", opacity:"80%", display: "flex",textAlign:"center", alignItems:"center",justifyContent:"center", background:"#000", borderRadius:"10px", width:"200px", height:"70px"}}>{temperaturaActual} ºC</h1>
       </div>
     </div>
     </div>
